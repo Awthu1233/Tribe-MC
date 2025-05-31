@@ -18,7 +18,7 @@ def install_version():
     for version in all_ver_info:
         if version["type"] == "release":
             ver_list.append(version["id"])
-#Shows version list
+
     for index, version in enumerate(ver_list):
         print(index, version)
 
@@ -28,16 +28,16 @@ def install_version():
 
 
 def launch_version():
-    info = open("info.txt", "r").read().strip()
+    info = open("info.txt", "a")
     settings = {
         "username": input(Fore.CYAN + "Put your username: "),
         "uuid": "id",
         "token": "token"
     }
-# Creates a txt file with player info
-    info.write(settings["username"] + "\n")
-    info.write(settings["uuid"] + "\n")
-    info.write(settings["token"] + "\n") 
+
+    info.write("name: " + settings["username"] + "\n")
+    info.write("UUID: " + settings["uuid"] + "\n")
+    info.write("Token: " + settings["token"] + "\n") 
     print(Fore.MAGENTA + "You can see your username, uuid and token in info.txt file.")   
 
     av_ver_list = []
@@ -65,4 +65,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
