@@ -18,7 +18,7 @@ def install_version():
     for version in all_ver_info:
         if version["type"] == "release":
             ver_list.append(version["id"])
-
+#Shows version list
     for index, version in enumerate(ver_list):
         print(index, version)
 
@@ -34,7 +34,7 @@ def launch_version():
         "uuid": "id",
         "token": "token"
     }
-
+# Creates a txt file with player info
     info.write(settings["username"] + "\n")
     info.write(settings["uuid"] + "\n")
     info.write(settings["token"] + "\n") 
